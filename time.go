@@ -110,7 +110,7 @@ func (t *Time) UnmarshalJSON(data []byte) error {
 
 func (t Time) MarshalText() ([]byte, error) {
 	if !t.Valid {
-		return []byte{}, nil
+		return nil, nil
 	}
 	return t.Time.MarshalText()
 }

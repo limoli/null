@@ -84,6 +84,11 @@ func TestUnmarshalTimeText(t *testing.T) {
 		t.Error("expected error")
 	}
 	assertNullTime(t, invalid, "bad string")
+
+	myNullTime := TimeFromPtr(nil)
+	if myNullTime.Valid {
+		t.Error("expected an invalid time")
+	}
 }
 
 func TestMarshalTime(t *testing.T) {
